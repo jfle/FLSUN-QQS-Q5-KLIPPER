@@ -1,0 +1,29 @@
+
+rinter QQS-PRO]
+# Define the moonraker host/port if different from 127.0.0.1 and 7125
+moonraker_host: 127.0.0.1
+moonraker_port: 7127
+# Moonraker API key if this is not connecting from a trusted client IP
+moonraker_api_key: False
+
+
+# Define printer and name. Name is anything after the first printer word
+[printer Q5-1]
+# Define the moonraker host/port if different from 127.0.0.1 and 7125
+#moonraker_host: 127.0.0.1
+#moonraker_port: 7125
+# Moonraker API key if this is not connecting from a trusted client IP
+moonraker_api_key: False
+
+
+
+# Define printer and name. Name is anything after the first printer word
+[printer Q5-2]
+# Define the moonraker host/port if different from 127.0.0.1 and 7125
+moonraker_host: 127.0.0.1
+moonraker_port: 7126
+# Moonraker API key if this is not connecting from a trusted client IP
+moonraker_api_key: False
+
+
+
