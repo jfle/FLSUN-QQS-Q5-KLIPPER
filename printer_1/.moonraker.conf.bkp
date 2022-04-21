@@ -1,71 +1,73 @@
 [server]
-host: 0.0.0.0
-port: 7125
-enable_debug_logging: False
-klippy_uds_address: /tmp/klippy_uds-1
+host = 0.0.0.0
+port = 7125
+enable_debug_logging = False
+klippy_uds_address = /tmp/klippy_uds-1
 
 [database]
-database_path: /home/pi/.moonraker_database_1
-
-
+database_path = /home/pi/.moonraker_database_1
 
 [authorization]
-trusted_clients:
-    10.0.0.0/8
-    127.0.0.0/8
-    169.254.0.0/16
-    172.16.0.0/12
-    192.168.0.0/16
-    FE80::/10
-    ::1/128
-cors_domains:
-    *.lan
-    *.local
-    *://my.mainsail.xyz
-    *://app.fluidd.xyz
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+cors_domains = 
+	*.lan
+	*.local
+	*://my.mainsail.xyz
+	*://app.fluidd.xyz
 
 [file_manager]
-config_path: /home/pi/klipper_config/printer_1
-log_path: /home/pi/klipper_logs
+config_path = /home/pi/klipper_config/printer_1
+log_path = /home/pi/klipper_logs
 
 [octoprint_compat]
 
 [power q51]
-type: homeassistant
-protocol: http
-address: hassio.local
-port: 8123
-device: switch.q5_1
-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhYjkwNzZlOTVkZTk0MjU0YTg2M2JlMDQ3NWQ1MzQ5MSIsImlhdCI6MTY0Nzc5NjU0NywiZXhwIjoxOTYzMTU2NTQ3fQ.dC5S1XUg9IwqOFhV25d556AR4h8L6DqcZev9Uvl6hqk
-domain: switch
-#off_when_shutdown_delay: 60
-#on_when_upload_queued: True
-#locked_while_printing: True
-#restart_klipper_when_powered: True
-#restart_delay: 1
-#bound_service: klipper-1
+type = homeassistant
+protocol = http
+address = 192.168.1.128
+port = 8123
+device = switch.q5_1
+token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhYjkwNzZlOTVkZTk0MjU0YTg2M2JlMDQ3NWQ1MzQ5MSIsImlhdCI6MTY0Nzc5NjU0NywiZXhwIjoxOTYzMTU2NTQ3fQ.dC5S1XUg9IwqOFhV25d556AR4h8L6DqcZev9Uvl6hqk
+domain = switch
+off_when_shutdown = True
+off_when_shutdown_delay = 60
+on_when_job_queued = True
+locked_while_printing = True
+restart_klipper_when_powered = True
+restart_delay = 2
+bound_service = klipper-1
 
 [history]
 
 [update_manager]
-channel: dev
+channel = dev
 
 [update_manager mainsail]
-type: web_beta
-repo: mainsail-crew/mainsail
-path: ~/mainsail
-refresh_interval: 24
+type = web
+channel = beta
+repo = mainsail-crew/mainsail
+path = ~/mainsail
+refresh_interval = 24
 
 [update_manager fluidd]
-type: web_beta
-repo: fluidd-core/fluidd
-path: ~/fluidd
-refresh_interval: 24
+type = web
+channel = beta
+repo = fluidd-core/fluidd
+path = ~/fluidd
+refresh_interval = 24
 
-#[update_manager KlipperScreen]
-#type: git_repo
-#path: /home/pi/KlipperScreen
-#origin: https://github.com/jordanruthe/KlipperScreen.git
-#env: /home/pi/.KlipperScreen-env/bin/python
-#requirements: scripts/KlipperScreen-requirements.txt
-#install_script: scripts/KlipperScreen-install.sh
+[update_manager KlipperScreen]
+type = git_repo
+path = /home/pi/KlipperScreen
+origin = https://github.com/jordanruthe/KlipperScreen.git
+env = /home/pi/.KlipperScreen-env/bin/python
+requirements = scripts/KlipperScreen-requirements.txt
+install_script = scripts/KlipperScreen-install.sh
+
