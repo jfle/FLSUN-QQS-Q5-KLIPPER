@@ -45,7 +45,7 @@ off_when_shutdown_delay = 60
 on_when_job_queued = True
 locked_while_printing = True
 restart_klipper_when_powered = True
-restart_delay = 10
+restart_delay = 1
 bound_service = klipper-3
 
 [job_queue]
